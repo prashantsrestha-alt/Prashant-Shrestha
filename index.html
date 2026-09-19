@@ -1,131 +1,1292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="ZH-n9Z567TikVUdHcWniH_iDMHklHYQFTknTXBiu6SI" /><meta charset="UTF-8">
+<meta name="google-site-verification" content="ZH-n9Z567TikVUdHcWniH_iDMHklHYQFTknTXBiu6SI">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Prashant Shrestha | Personal Portfolio</title>
-<meta name="description" content="Personal portfolio of Prashant Shrestha — Nepal to Romania.">
+
+<meta name="description" content="Prashant Shrestha — Nepali creator, football enthusiast and young professional living in Romania.">
+<meta name="theme-color" content="#050505">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#050505;color:#fff;line-height:1.6}
-a{color:inherit;text-decoration:none}
-nav{position:fixed;top:0;left:0;width:100%;z-index:10;background:rgba(5,5,5,.82);backdrop-filter:blur(12px);border-bottom:1px solid #222}
-.nav-inner{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:800;letter-spacing:1px}
-.nav-links{display:flex;gap:22px;font-size:14px;color:#bbb}
-.nav-links a:hover{color:#fff}
-.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:110px 22px 70px;background:radial-gradient(circle at 50% 35%,#242424 0,#0d0d0d 35%,#050505 70%)}
-.hero h1{font-size:clamp(48px,11vw,105px);letter-spacing:-5px;line-height:.95}
-.hero h1 span{color:#888}
-.tag{margin:25px auto 0;color:#bbb;font-size:18px}
-.buttons{margin-top:32px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.btn{padding:12px 22px;border:1px solid #fff;border-radius:30px;font-weight:700}
-.btn.fill{background:#fff;color:#000}
-section{max-width:1100px;margin:auto;padding:95px 22px}
-.kicker{text-transform:uppercase;letter-spacing:3px;color:#777;font-size:12px;margin-bottom:10px}
-h2{font-size:clamp(32px,6vw,55px);margin-bottom:25px}
-.about{display:grid;grid-template-columns:1.3fr .7fr;gap:50px}
-.about p{color:#bbb;font-size:18px}
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{border:1px solid #262626;border-radius:18px;padding:26px;background:#0b0b0b}
-.card .icon{font-size:30px;margin-bottom:10px}
-.card h3{margin-bottom:8px}
-.card p{color:#999;font-size:14px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-.stat{padding:24px;border-left:2px solid #fff;background:#0c0c0c}
-.stat strong{font-size:30px;display:block}
-.stat span{color:#888;font-size:13px}
-.social{display:flex;gap:12px;flex-wrap:wrap}
-.social a{border:1px solid #333;border-radius:14px;padding:14px 18px;background:#0b0b0b}
-.social a:hover{border-color:#fff}
-footer{text-align:center;border-top:1px solid #222;padding:30px 22px;color:#666;font-size:13px}
-@media(max-width:760px){
- .nav-links{display:none}
- .about,.card-grid,.stats{grid-template-columns:1fr}
- .hero h1{letter-spacing:-3px}
- section{padding:70px 20px}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:#050505;
+    color:#fff;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+::selection{
+    background:#fff;
+    color:#000;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.035;
+
+    background-image:
+        radial-gradient(#fff 1px,transparent 1px);
+
+    background-size:4px 4px;
+    z-index:999;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:100;
+
+    background:rgba(5,5,5,.72);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+    max-width:1200px;
+    margin:auto;
+
+    padding:18px 28px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#777;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+
+    font-size:13px;
+    color:#999;
+}
+
+.nav-links a{
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:130px 20px 80px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #292929 0%,
+            #111 28%,
+            #070707 58%,
+            #050505 100%
+        );
+}
+
+
+/* Glow */
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    filter:blur(180px);
+
+    opacity:.045;
+
+    animation:pulse 5s infinite alternate;
+}
+
+@keyframes pulse{
+    from{
+        transform:scale(.85);
+        opacity:.025;
+    }
+
+    to{
+        transform:scale(1.15);
+        opacity:.06;
+    }
+}
+
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+
+.hero-kicker{
+    font-size:12px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#777;
+
+    margin-bottom:25px;
+
+    animation:fadeUp 1s ease forwards;
+}
+
+.hero h1{
+    font-size:clamp(55px,12vw,145px);
+
+    line-height:.85;
+
+    letter-spacing:-8px;
+
+    font-weight:900;
+
+    animation:fadeUp 1s .1s ease both;
+}
+
+.hero h1 span{
+    color:#777;
+}
+
+.hero-subtitle{
+    margin-top:32px;
+
+    font-size:18px;
+
+    color:#aaa;
+
+    animation:fadeUp 1s .2s ease both;
+}
+
+.hero-subtitle strong{
+    color:#fff;
+}
+
+
+.buttons{
+    margin-top:35px;
+
+    display:flex;
+    justify-content:center;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    animation:fadeUp 1s .3s ease both;
+}
+
+.btn{
+    padding:13px 25px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    border-color:#fff;
+}
+
+.btn.fill{
+    background:#fff;
+    color:#000;
+}
+
+.btn.fill:hover{
+    box-shadow:0 10px 35px rgba(255,255,255,.15);
+}
+
+
+/* Scroll indicator */
+
+.scroll{
+    position:absolute;
+
+    bottom:28px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#666;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:120px 28px;
+}
+
+.kicker{
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    color:#666;
+
+    font-size:11px;
+
+    margin-bottom:14px;
+}
+
+h2{
+    font-size:clamp(38px,6vw,72px);
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin-bottom:45px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.about-text{
+    font-size:21px;
+
+    color:#aaa;
+
+    max-width:700px;
+}
+
+.about-text strong{
+    color:#fff;
+}
+
+.stats{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+}
+
+.stat{
+    min-height:145px;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    border:1px solid #222;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #080808
+        );
+
+    transition:.35s;
+}
+
+.stat:hover{
+    transform:translateY(-7px);
+
+    border-color:#555;
+}
+
+.stat strong{
+    font-size:28px;
+
+    margin-bottom:5px;
+}
+
+.stat span{
+    font-size:12px;
+
+    color:#666;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.card{
+    position:relative;
+
+    padding:32px;
+
+    min-height:210px;
+
+    border:1px solid #222;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.01)
+        );
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    top:-80px;
+    right:-80px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    filter:blur(80px);
+
+    opacity:0;
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    border-color:#444;
+}
+
+.card:hover::before{
+    opacity:.08;
+}
+
+.icon{
+    font-size:34px;
+
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-size:21px;
+
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#888;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.skill{
+    padding:12px 18px;
+
+    border:1px solid #292929;
+
+    border-radius:50px;
+
+    color:#aaa;
+
+    background:#0b0b0b;
+
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.skill:hover{
+    color:#000;
+
+    background:#fff;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   GOALS
+========================= */
+
+.goal{
+    min-height:230px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+}
+
+.goal-number{
+    font-size:12px;
+
+    color:#555;
+
+    letter-spacing:3px;
+}
+
+.goal h3{
+    font-size:25px;
+}
+
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+}
+
+.social a{
+    padding:22px;
+
+    border:1px solid #222;
+
+    border-radius:18px;
+
+    background:#0a0a0a;
+
+    color:#aaa;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transition:.3s;
+}
+
+.social a span{
+    color:#fff;
+
+    font-weight:700;
+}
+
+.social a:hover{
+    border-color:#fff;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+    padding:60px 30px;
+
+    text-align:center;
+
+    border:1px solid #222;
+
+    border-radius:25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #181818,
+            #080808
+        );
+}
+
+.contact-box h2{
+    margin-bottom:15px;
+}
+
+.contact-box p{
+    color:#777;
+
+    margin-bottom:30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid #1d1d1d;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .nav-inner{
+        padding:16px 20px;
+    }
+
+    .hero h1{
+        letter-spacing:-5px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+
+        gap:35px;
+    }
+
+    .card-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .social{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:560px){
+
+    section{
+        padding:85px 20px;
+    }
+
+    .hero{
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .hero h1{
+        font-size:clamp(52px,17vw,90px);
+
+        letter-spacing:-5px;
+    }
+
+    .hero-subtitle{
+        font-size:16px;
+    }
+
+    h2{
+        letter-spacing:-2px;
+    }
+
+    .about-text{
+        font-size:18px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        min-height:190px;
+    }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+    }
+
+}
+
 </style>
 </head>
+
+
 <body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
-  <div class="nav-inner">
-    <div class="logo">PS.</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#interests">Interests</a>
-      <a href="#goals">Goals</a>
-      <a href="#social">Social</a>
-    </div>
-  </div>
+
+<div class="nav-inner">
+
+<div class="logo">
+PS<span>.</span>
+</div>
+
+<div class="nav-links">
+
+<a href="#about">About</a>
+<a href="#interests">Interests</a>
+<a href="#skills">Skills</a>
+<a href="#goals">Goals</a>
+<a href="#social">Social</a>
+
+</div>
+
+</div>
+
 </nav>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="hero">
-  <div>
-    <div class="kicker">Nepali • Romania</div>
-    <h1>Prashant<br><span>Shrestha</span></h1>
-    <p class="tag">Dream. Work. Grow. Repeat. 🚀</p>
-    <div class="buttons">
-      <a class="btn fill" href="#about">Explore</a>
-      <a class="btn" href="#social">Connect</a>
-    </div>
-  </div>
+
+<div class="hero-content">
+
+<div class="hero-kicker">
+Nepal 🇳🇵 • Romania 🇷🇴
+</div>
+
+<h1>
+Prashant<br>
+<span>Shrestha</span>
+</h1>
+
+<p class="hero-subtitle">
+Dream. <strong>Work.</strong> Grow. Repeat. 🚀
+</p>
+
+<div class="buttons">
+
+<a class="btn fill" href="#about">
+Explore My World
+</a>
+
+<a class="btn" href="#social">
+Connect
+</a>
+
+</div>
+
+</div>
+
+
+<div class="scroll">
+Scroll ↓
+</div>
+
 </header>
 
+
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section id="about">
-  <div class="kicker">01 — About</div>
-  <h2>More than a name.</h2>
-  <div class="about">
-    <p>
-      I’m Prashant Shrestha, a young Nepali currently living and working in Romania.
-      I’m passionate about football, technology, travel, content creation, and learning
-      new skills. I’m focused on building a better future, supporting my family, and
-      becoming the best version of myself.
-    </p>
-    <div class="stats">
-      <div class="stat"><strong>🇳🇵 → 🇷🇴</strong><span>Journey</span></div>
-      <div class="stat"><strong>⚽</strong><span>Striker</span></div>
-      <div class="stat"><strong>🚀</strong><span>Future-focused</span></div>
-    </div>
-  </div>
+
+<div class="kicker">
+01 — About
+</div>
+
+<h2>
+More than a name.
+</h2>
+
+<div class="about">
+
+<div class="about-text">
+
+<p>
+I’m <strong>Prashant Shrestha</strong>, a young Nepali currently living and working in Romania.
+</p>
+
+<br>
+
+<p>
+I’m passionate about <strong>football, technology, travel, content creation and learning</strong>.
+I believe in improving myself step by step and building a better future.
+</p>
+
+<br>
+
+<p>
+From Nepal to Romania, this is my journey — and it’s only the beginning. 🌍
+</p>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+<strong>🇳🇵 → 🇷🇴</strong>
+<span>My Journey</span>
+</div>
+
+<div class="stat">
+<strong>⚽</strong>
+<span>Striker</span>
+</div>
+
+<div class="stat">
+<strong>🚀</strong>
+<span>Future Focused</span>
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- =========================
+     INTERESTS
+========================= -->
 
 <section id="interests">
-  <div class="kicker">02 — Interests</div>
-  <h2>Things I love.</h2>
-  <div class="card-grid">
-    <div class="card"><div class="icon">⚽</div><h3>Football</h3><p>Striker mindset. Real Madrid fan. Inspired by Cristiano Ronaldo.</p></div>
-    <div class="card"><div class="icon">📱</div><h3>Technology</h3><p>Phones, gadgets, digital tools and learning new technology.</p></div>
-    <div class="card"><div class="icon">🎥</div><h3>Content</h3><p>Building ideas for YouTube, short videos and creative content.</p></div>
-    <div class="card"><div class="icon">✈️</div><h3>Travel</h3><p>Dreaming of exploring Greece, Finland, Switzerland and beyond.</p></div>
-    <div class="card"><div class="icon">💻</div><h3>Learning</h3><p>Learning Python, Romanian and new skills step by step.</p></div>
-    <div class="card"><div class="icon">♟️</div><h3>Chess</h3><p>Learning chess and aiming to become seriously good at it.</p></div>
-  </div>
+
+<div class="kicker">
+02 — Interests
+</div>
+
+<h2>
+Things I love.
+</h2>
+
+
+<div class="card-grid">
+
+
+<div class="card">
+
+<div class="icon">⚽</div>
+
+<h3>Football</h3>
+
+<p>
+Striker mindset. Real Madrid fan. Inspired by Cristiano Ronaldo and the mentality of never giving up.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📱</div>
+
+<h3>Technology</h3>
+
+<p>
+Phones, gadgets, digital tools and discovering new technology.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎥</div>
+
+<h3>Content Creation</h3>
+
+<p>
+Creating ideas for YouTube, Shorts and creative digital content.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">✈️</div>
+
+<h3>Travel</h3>
+
+<p>
+Dreaming about Greece, Finland, Switzerland and discovering the world.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>Learning</h3>
+
+<p>
+Learning Python, Romanian and new skills one step at a time.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">♟️</div>
+
+<h3>Chess</h3>
+
+<p>
+Learning chess and working toward becoming seriously good at the game.
+</p>
+
+</div>
+
+
+</div>
+
 </section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+<div class="kicker">
+03 — Skills & Learning
+</div>
+
+<h2>
+Always learning.
+</h2>
+
+<div class="skills">
+
+<div class="skill">Python 🐍</div>
+<div class="skill">Romanian 🇷🇴</div>
+<div class="skill">Content Creation 🎥</div>
+<div class="skill">YouTube 📺</div>
+<div class="skill">Technology 📱</div>
+<div class="skill">Football ⚽</div>
+<div class="skill">Chess ♟️</div>
+<div class="skill">Communication 💬</div>
+<div class="skill">Self Development 🚀</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GOALS
+========================= -->
 
 <section id="goals">
-  <div class="kicker">03 — Goals</div>
-  <h2>Building the future.</h2>
-  <div class="card-grid">
-    <div class="card"><h3>100K YouTube</h3><p>Grow a creative channel and build a real audience.</p></div>
-    <div class="card"><h3>Financial Freedom</h3><p>Save consistently, improve income and create long-term stability.</p></div>
-    <div class="card"><h3>See the World</h3><p>Travel, experience new cultures and collect unforgettable memories.</p></div>
-  </div>
+
+<div class="kicker">
+04 — Goals
+</div>
+
+<h2>
+Building the future.
+</h2>
+
+
+<div class="card-grid">
+
+
+<div class="card goal">
+
+<div class="goal-number">
+GOAL 01
+</div>
+
+<div>
+
+<h3>
+100K YouTube
+</h3>
+
+<p>
+Build a creative channel and grow a real audience.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card goal">
+
+<div class="goal-number">
+GOAL 02
+</div>
+
+<div>
+
+<h3>
+Financial Freedom
+</h3>
+
+<p>
+Save consistently, improve income and build long-term stability.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card goal">
+
+<div class="goal-number">
+GOAL 03
+</div>
+
+<div>
+
+<h3>
+See the World
+</h3>
+
+<p>
+Travel, experience different cultures and create unforgettable memories.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
 </section>
+
+
+<!-- =========================
+     SOCIAL
+========================= -->
 
 <section id="social">
-  <div class="kicker">04 — Social</div>
-  <h2>Let’s connect.</h2>
-  <div class="social">
-    <a href="https://instagram.com/prxshant.shrestha" target="_blank">Instagram · @prxshant.shrestha</a>
-    <a href="https://snapchat.com/add/prashant_sresta" target="_blank">Snapchat · @prashant_sresta</a>
-  </div>
+
+<div class="kicker">
+05 — Social
+</div>
+
+<h2>
+Let’s connect.
+</h2>
+
+
+<div class="social">
+
+<a
+href="https://instagram.com/prxshant.shrestha"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+<span>Instagram</span>
+
+@prxshant.shrestha →
+
+</a>
+
+
+<a
+href="https://snapchat.com/add/prashant_sresta"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+<span>Snapchat</span>
+
+@prashant_sresta →
+
+</a>
+
+
+<a
+href="mailto:prashantsrestha@gmail.com"
+>
+
+<span>Email</span>
+
+Contact me →
+
+</a>
+
+
+</div>
+
 </section>
 
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section>
+
+<div class="contact-box">
+
+<div class="kicker">
+06 — Contact
+</div>
+
+<h2>
+Have an idea?
+</h2>
+
+<p>
+Let’s connect and create something meaningful.
+</p>
+
+<a
+class="btn fill"
+href="mailto:prashantsrestha@gmail.com"
+>
+Send me an email
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-  © <span id="year"></span> Prashant Shrestha · Built with 🖤
+
+© <span id="year"></span> Prashant Shrestha
+
+<br>
+
+Built with 🖤 from Nepal 🇳🇵 to Romania 🇷🇴
+
 </footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+
+
+<script>
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+/* Reveal animation */
+
+const elements =
+document.querySelectorAll(
+".card, .stat, .skill, .social a, .contact-box"
+);
+
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+},
+
+{
+threshold:.12
+}
+
+);
+
+
+elements.forEach(el=>{
+
+el.style.opacity="0";
+el.style.transform="translateY(25px)";
+el.style.transition="opacity .7s ease, transform .7s ease";
+
+observer.observe(el);
+
+});
+
+</script>
+
+
 </body>
 </html>
